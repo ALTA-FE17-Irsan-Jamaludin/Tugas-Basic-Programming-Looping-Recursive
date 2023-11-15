@@ -15,7 +15,7 @@ export const primeNumber = (angka: number): boolean | number => {
   return angka;
 };
 
-const primeX = (input: number): any => {
+const primeX = (input: number): number => {
   let primeArray: number[] = [];
   for (let i = 2; primeArray.length < input; i++) {
     if (primeNumber(i)) {
