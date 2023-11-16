@@ -1,23 +1,20 @@
 import { primeNumber } from "./Problem1";
 
 const primaSegiEmpat = (high: number, wide: number, start: number): void => {
-  let result: number = 0;
-  let totalPrimes: number = 0;
-
+  let totalPrimes = 0;
   for (let i = 0; i < high; i++) {
-    let baris: string = `Baris ${i + 1} : `;
+    let row = "";
     for (let j = 0; j < wide; j++) {
       while (!primeNumber(start)) {
         start++;
       }
-      baris += `${start}` + " ";
       totalPrimes += start;
+      row += start + " ";
       start++;
     }
-    console.log(baris);
+    console.log(row);
   }
-  result += totalPrimes;
-  console.log(result);
+  console.log(totalPrimes);
 };
 
-primaSegiEmpat(5, 5, 13);
+primaSegiEmpat(2, 5, 1);

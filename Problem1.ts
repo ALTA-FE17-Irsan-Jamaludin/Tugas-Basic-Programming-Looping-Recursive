@@ -1,28 +1,23 @@
 export const primeNumber = (angka: number): boolean | number => {
-  if (angka === 1) {
+  if (angka < 2) {
     return false;
-  } else if (angka === 2 || angka === 5) {
-    return true;
-  } else {
-    for (let i = 2; i < angka; i++) {
-      if (angka % i === 0 || angka % 5 === 0) {
-        return false;
-      } else {
-        return true;
-      }
+  }
+  for (let i = 2; i <= Math.sqrt(angka); i++) {
+    if (angka % i === 0) {
+      return false;
     }
   }
-  return angka;
+  return true;
 };
 
-const primeX = (input: number): number => {
-  let primeArray: number[] = [];
-  for (let i = 2; primeArray.length < input; i++) {
+const primeX = (num: number) => {
+  let dataPrimes: number[] = [];
+  for (let i = 2; dataPrimes.length < num; i++) {
     if (primeNumber(i)) {
-      primeArray.push(i);
+      dataPrimes.push(i);
     }
   }
-  return primeArray[input - 1];
+  return dataPrimes[num - 1];
 };
 
-console.log(primeX(5));
+// console.log(primeX(5));
